@@ -30,7 +30,7 @@
       .title { font: 700 42px Arial, sans-serif; fill: #18334B; }
       .section { font: 700 22px Arial, sans-serif; fill: #18334B; }
       .node { font: 700 24px Arial, sans-serif; fill: #18334B; }
-      .tool { font: 700 18px Arial, sans-serif; fill: #18334B; }
+      .tool { font: 700 16px Arial, sans-serif; fill: #18334B; text-anchor: middle; dominant-baseline: middle; }
       .chipDark { font: 700 20px Arial, sans-serif; fill: #18334B; }
       .chipLight { font: 700 20px Arial, sans-serif; fill: #FFFFFF; }
     </style>
@@ -80,14 +80,14 @@
   <path d="M716 408V470" stroke="#24425D" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
   <path d="M802 526H850" stroke="#24425D" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
 
-  <rect x="1050" y="250" width="228" height="92" rx="28" fill="#FFF2C9" stroke="#E2C15E" stroke-width="2"/>
-  <text x="1085" y="306" class="tool">check_symptom_urgency</text>
+  <rect x="1038" y="250" width="252" height="92" rx="28" fill="#FFF2C9" stroke="#E2C15E" stroke-width="2"/>
+  <text x="1164" y="296" class="tool">check_symptom_urgency</text>
 
-  <rect x="1050" y="394" width="228" height="92" rx="28" fill="#E0F3E8" stroke="#7FC9A4" stroke-width="2"/>
-  <text x="1090" y="450" class="tool">book_gp_appointment</text>
+  <rect x="1038" y="394" width="252" height="92" rx="28" fill="#E0F3E8" stroke="#7FC9A4" stroke-width="2"/>
+  <text x="1164" y="440" class="tool">book_gp_appointment</text>
 
-  <rect x="1050" y="538" width="228" height="92" rx="28" fill="#E5F0FF" stroke="#93B7E8" stroke-width="2"/>
-  <text x="1110" y="594" class="tool">get_self_care_advice</text>
+  <rect x="1038" y="538" width="252" height="92" rx="28" fill="#E5F0FF" stroke="#93B7E8" stroke-width="2"/>
+  <text x="1164" y="584" class="tool">get_self_care_advice</text>
 
   <path d="M802 352C898 318 974 302 1050 296" stroke="#3E6790" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 10" marker-end="url(#arrowBlue)"/>
   <path d="M802 352C904 372 980 410 1050 440" stroke="#3E6790" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 10" marker-end="url(#arrowBlue)"/>
