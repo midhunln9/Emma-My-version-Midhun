@@ -1,13 +1,28 @@
 # Practice Voice Agent
 
-Simple LiveKit voice agent for local console testing.
+Simple LiveKit voice agent with intentionally minimal code.
 
-## Required environment variables
+The current code follows this structure:
 
+- `Assistant(Agent)` owns the voice pipeline configuration
+- `AgentSession()` is created with default settings
+- `entrypoint()` only starts the session with the assistant
+
+## What The Agent Uses
+
+- STT: OpenAI `gpt-4o-mini-transcribe`
+- LLM: OpenAI `gpt-4.1`
+- TTS: OpenAI `gpt-4o-mini-tts`
+- VAD: Silero
+
+The assistant instructions currently tell it to be helpful and kind, and to identify itself as Midhun.
+
+## Required Environment Variables
+
+- `OPENAI_API_KEY`
 - `LIVEKIT_URL`
 - `LIVEKIT_API_KEY`
 - `LIVEKIT_API_SECRET`
-- `OPENAI_API_KEY`
 
 ## Setup
 
@@ -16,23 +31,32 @@ uv sync
 uv run python agent.py download-files
 ```
 
-## Run in Console
+## Run In Console
+
+This is the simplest way to try the agent locally.
 
 ```bash
 uv run python agent.py console
 ```
 
-## Run in Playground
+If everything is working, the terminal should reach:
+
+```text
+assistant ready
+```
+
+Then you can talk to it through your microphone.
+
+## Run In Playground
 
 ```bash
 uv run python agent.py dev
 ```
 
-The agent name is `practice-voice-agent`.
+The registered agent name is `practice-voice-agent`.
 
-This version keeps the code intentionally simple:
+## Notes
 
-- STT: OpenAI `gpt-4o-mini-transcribe`
-- LLM: OpenAI `gpt-4.1`
-- TTS: OpenAI `gpt-4o-mini-tts`
-- VAD: Silero
+- This version does not use ElevenLabs.
+- This version does not use the LiveKit multilingual turn detector.
+- The code loads environment variables with `load_dotenv(override=True)`.
