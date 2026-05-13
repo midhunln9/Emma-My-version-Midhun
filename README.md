@@ -7,15 +7,16 @@ The current code follows this structure:
 - `Assistant(Agent)` owns the voice pipeline configuration
 - `AgentSession()` is created with default settings
 - `entrypoint()` only starts the session with the assistant
+- `emma_workflow.py` contains Emma's LangGraph receptionist workflow
 
 ## What The Agent Uses
 
 - STT: OpenAI `gpt-4o-mini-transcribe`
-- LLM: OpenAI `gpt-4.1`
+- LLM: `EmmaLiveKitLLM()` backed by an async LangGraph workflow
 - TTS: OpenAI `gpt-4o-mini-tts`
 - VAD: Silero
 
-The assistant instructions currently tell it to be helpful and kind, and to identify itself as Midhun.
+Emma acts like a GP surgery receptionist and keeps replies short for voice.
 
 ## Required Environment Variables
 
@@ -46,6 +47,14 @@ assistant ready
 ```
 
 Then you can talk to it through your microphone.
+
+## Quick Emma Workflow Test
+
+You can also test the LangGraph workflow without LiveKit:
+
+```bash
+uv run python emma_workflow.py
+```
 
 ## Run In Playground
 
