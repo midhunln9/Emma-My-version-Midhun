@@ -1,0 +1,100 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="40" x2="1336" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F4EA"/>
+      <stop offset="0.5" stop-color="#F7FBFF"/>
+      <stop offset="1" stop-color="#EEF8F4"/>
+    </linearGradient>
+    <linearGradient id="voicePanel" x1="40" y1="110" x2="410" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8EE"/>
+      <stop offset="1" stop-color="#FFFCF6"/>
+    </linearGradient>
+    <linearGradient id="graphPanel" x1="430" y1="110" x2="990" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF5FF"/>
+      <stop offset="1" stop-color="#F9FCFF"/>
+    </linearGradient>
+    <linearGradient id="toolsPanel" x1="1010" y1="110" x2="1360" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1FBF6"/>
+      <stop offset="1" stop-color="#FBFEFC"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#17324A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrowNavy" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10V0Z" fill="#284766"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L10 5L0 10V0Z" fill="#456F9B"/>
+    </marker>
+    <style>
+      .title { font: 700 46px Arial, sans-serif; fill: #17324A; text-anchor: middle; }
+      .section { font: 700 24px Arial, sans-serif; fill: #17324A; }
+      .node { font: 700 24px Arial, sans-serif; fill: #17324A; text-anchor: middle; dominant-baseline: middle; }
+      .tool { font: 700 17px Arial, sans-serif; fill: #17324A; text-anchor: middle; dominant-baseline: middle; }
+      .chipLight { font: 700 18px Arial, sans-serif; fill: #FFFFFF; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="760" rx="34" fill="url(#bg)"/>
+
+  <text x="700" y="78" class="title">EMMA LangGraph Workflow</text>
+
+  <rect x="40" y="110" width="370" height="610" rx="34" fill="url(#voicePanel)" stroke="#E8D5B3" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="430" y="110" width="560" height="610" rx="34" fill="url(#graphPanel)" stroke="#D0E0F1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1010" y="110" width="350" height="610" rx="34" fill="url(#toolsPanel)" stroke="#CEE7D8" stroke-width="2" filter="url(#shadow)"/>
+
+  <text x="82" y="168" class="section">Voice Pipeline</text>
+  <text x="472" y="168" class="section">LangGraph Core</text>
+  <text x="1052" y="168" class="section">Agent Tools</text>
+
+  <rect x="108" y="214" width="234" height="84" rx="26" fill="#F9E4D0" stroke="#DCA267" stroke-width="2"/>
+  <text x="225" y="256" class="node">Patient Speech</text>
+
+  <rect x="108" y="354" width="234" height="84" rx="26" fill="#FFF0C9" stroke="#E2BE59" stroke-width="2"/>
+  <text x="225" y="396" class="node">OpenAI STT</text>
+
+  <rect x="108" y="494" width="234" height="84" rx="26" fill="#DFF3EB" stroke="#77C6A2" stroke-width="2"/>
+  <text x="225" y="536" class="node">Chat Context</text>
+
+  <rect x="108" y="634" width="234" height="84" rx="26" fill="#F7DEE5" stroke="#D694A7" stroke-width="2"/>
+  <text x="225" y="676" class="node">OpenAI TTS</text>
+
+  <path d="M225 298V354" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+  <path d="M225 438V494" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+  <path d="M225 578V634" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+
+  <circle cx="532" cy="380" r="40" fill="#284766"/>
+  <text x="532" y="382" class="chipLight">START</text>
+
+  <rect x="618" y="282" width="198" height="106" rx="30" fill="#DBEAFE" stroke="#84B1E4" stroke-width="2"/>
+  <text x="717" y="335" class="node">triage</text>
+
+  <rect x="618" y="448" width="228" height="98" rx="30" fill="#E3F6EE" stroke="#82C7A2" stroke-width="2"/>
+  <text x="732" y="497" class="node">extract_state</text>
+
+  <circle cx="908" cy="497" r="40" fill="#284766"/>
+  <text x="908" y="499" class="chipLight">END</text>
+
+  <rect x="566" y="610" width="310" height="58" rx="22" fill="#284766"/>
+  <text x="721" y="639" class="chipLight">In-Memory State</text>
+
+  <path d="M572 380H618" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+  <path d="M717 388V448" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+  <path d="M846 497H868" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+
+  <rect x="1060" y="214" width="250" height="84" rx="26" fill="#FFF2C9" stroke="#E2C15C" stroke-width="2"/>
+  <text x="1185" y="256" class="tool">check_symptom_urgency</text>
+
+  <rect x="1060" y="354" width="250" height="84" rx="26" fill="#E1F3E8" stroke="#7DC9A5" stroke-width="2"/>
+  <text x="1185" y="396" class="tool">book_gp_appointment</text>
+
+  <rect x="1060" y="494" width="250" height="84" rx="26" fill="#E5F0FF" stroke="#90B6E7" stroke-width="2"/>
+  <text x="1185" y="536" class="tool">get_self_care_advice</text>
+
+  <path d="M816 314C902 290 986 274 1060 256" stroke="#456F9B" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 10" marker-end="url(#arrowBlue)"/>
+  <path d="M816 334C906 350 986 378 1060 396" stroke="#456F9B" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 10" marker-end="url(#arrowBlue)"/>
+  <path d="M816 356C904 420 986 484 1060 536" stroke="#456F9B" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 10" marker-end="url(#arrowBlue)"/>
+
+  <path d="M342 536H430" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+  <path d="M342 676C470 748 994 748 1185 566" stroke="#284766" stroke-width="5" stroke-linecap="round" marker-end="url(#arrowNavy)"/>
+</svg>

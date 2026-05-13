@@ -1,4 +1,4 @@
-![EMMA LangGraph workflow](docs/emma-langgraph-workflow.svg)
+![EMMA LangGraph workflow](docs/emma-langgraph-workflow-readme.svg)
 
 # Practice Voice Agent
 
